@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --fond: #F5F4F2;
+  --carte: #FFFFFF;
+  --indigo: #1B1F3B;
+  --indigo-clair: #2B2F58;
+  --encre: #16161B;
+  --encre-douce: #63636B;
+  --jaune: #E8B930;
+  --jaune-fonce: #C99A1E;
+  --rouge: #C23B2E;
+  --ligne: #E3E0D9;
+  --display: 'Space Grotesk', sans-serif;
+  --sans: 'Inter', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+.header {
+  background: var(--indigo);
+  padding: 14px 28px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  font-family: var(--sans);
+}
+
+/* ---------- Logo ---------- */
+.logo {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 21px;
+  color: #fff;
+  margin: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+  letter-spacing: -0.01em;
+}
+
+.logo-dot { color: var(--jaune); }
+
+/* ---------- Search wrapper (styles internes = ceux de ton composant Search) ---------- */
+.header > div:has(input),
+.header form {
+  flex: 1;
+  max-width: 480px;
+}
+
+/* ---------- Navigation ---------- */
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-left: auto;
+}
+
+.navigation a {
+  color: #C9CAE0;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 2px;
+  position: relative;
+  transition: color 0.15s ease;
+}
+
+.navigation a:hover,
+.navigation a.active {
+  color: #fff;
+}
+
+.navigation a.active::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -4px;
+  height: 2px;
+  background: var(--jaune);
+  border-radius: 2px;
+}
+
+/* ---------- Dropdown "Produit" ---------- */
+.product-menu {
+  position: relative;
+}
+
+.product-menu-button {
+  background: none;
+  border: none;
+  color: #C9CAE0;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px 2px;
+  transition: color 0.15s ease;
+}
+
+.product-menu-button:hover { color: #fff; }
+
+.arrow {
+  font-size: 11px;
+  transition: transform 0.2s ease;
+}
+
+.arrow.rotate { transform: rotate(180deg); }
+
+.product-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  background: var(--carte);
+  border-radius: 6px;
+  box-shadow: 0 12px 28px rgba(27, 31, 59, 0.18);
+  min-width: 160px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.product-dropdown button {
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 10px 12px;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  color: var(--encre);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.product-dropdown button:hover {
+  background: var(--fond);
+  color: var(--indigo);
+}
+
+/* ---------- Bouton panier ---------- */
+.shop-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--jaune);
+  color: var(--indigo);
+  border: none;
+  padding: 9px 16px;
+  border-radius: 4px;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 13.5px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.shop-btn:hover { background: var(--jaune-fonce); }
+
+.cart-icon { font-size: 15px; }
+
+.cart-count {
+  background: var(--indigo);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- Profil ---------- */
+.profile-menu { position: relative; }
+
+.profile-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.profile-icon {
+  font-size: 26px;
+  color: #C9CAE0;
+  transition: color 0.15s ease;
+}
+
+.profile-button:hover .profile-icon { color: #fff; }
+
+.navbar-profile-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--jaune);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  background: var(--carte);
+  border-radius: 6px;
+  box-shadow: 0 12px 28px rgba(27, 31, 59, 0.18);
+  min-width: 170px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.dropdown-menu button {
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 10px 12px;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  color: var(--encre);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dropdown-menu button:hover {
+  background: var(--fond);
+  color: var(--indigo);
+}
+
+/* ---------- Login ---------- */
+.btnLogin-popup {
+  background: #fff;
+  color: var(--indigo);
+  border: none;
+  padding: 9px 18px;
+  border-radius: 4px;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 13.5px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.btnLogin-popup:hover { background: var(--jaune); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .header { flex-wrap: wrap; gap: 12px; }
+  .navigation { gap: 14px; flex-wrap: wrap; }
+  .header > div:has(input),
+  .header form { order: 3; max-width: 100%; flex-basis: 100%; }
+}

@@ -1,0 +1,137 @@
+.edit-product-container {
+  min-height: 100vh;
+  padding: 50px 20px;
+  background: #f5f5f5;
+}
+
+.edit-product-card {
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+  background: white;
+  padding: 35px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.edit-product-card h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #111827;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #111827;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.old-image {
+  margin: 25px 0;
+}
+
+.old-image p {
+  font-weight: 600;
+  color: #374151;
+}
+
+.old-image img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.edit-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.edit-buttons button {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cancel-button {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.cancel-button:hover {
+  background: #d1d5db;
+}
+
+.save-button {
+  background: #111827;
+  color: white;
+}
+
+.save-button:hover {
+  background: #000;
+}
+
+.save-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.success-message {
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background: #dcfce7;
+  color: #166534;
+  text-align: center;
+}
+
+.error-message {
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background: #fee2e2;
+  color: #991b1b;
+  text-align: center;
+}
+
+.edit-loading,
+.edit-error {
+  text-align: center;
+  padding: 80px 20px;
+  font-size: 20px;
+}
+
+.edit-error {
+  color: #dc2626;
+}

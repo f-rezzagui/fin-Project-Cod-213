@@ -1,0 +1,291 @@
+:root {
+  --primary-color: #38bdf8;
+  --primary-hover: #0ea5e9;
+
+  --text-dark: #1e293b;
+  --text-light: #64748b;
+
+  --bg-card: #ffffff;
+  --bg-container: #f8fafc;
+
+  --border-color: #e2e8f0;
+
+  --radius-lg: 12px;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  --shadow-hover:
+    0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   CONTENEUR PRODUITS
+========================= */
+
+.products-container {
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 120px 30px 40px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(220px, 1fr));
+
+  gap: 25px;
+
+  background-color: var(--bg-container);
+
+  min-height: 100vh;
+}
+
+
+/* =========================
+   TITRE
+========================= */
+
+.products-title {
+  grid-column: 1 / -1;
+
+  text-align: center;
+
+  font-size: 32px;
+
+  font-weight: 700;
+
+  color: var(--text-dark);
+
+  margin-bottom: 10px;
+}
+
+
+/* =========================
+   LIEN
+========================= */
+
+.product-link {
+  text-decoration: none;
+
+  color: inherit;
+
+  display: block;
+}
+
+
+/* =========================
+   CARTE PRODUIT
+========================= */
+
+.product-card {
+  height: 100%;
+
+  background-color: var(--bg-card);
+
+  border-radius: var(--radius-lg);
+
+  border: 1px solid var(--border-color);
+
+  box-shadow: var(--shadow-sm);
+
+  overflow: hidden;
+
+  display: flex;
+
+  flex-direction: column;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* Hover */
+
+.product-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow: var(--shadow-hover);
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.product-image {
+  width: 100%;
+
+  height: 250px;
+
+  object-fit: cover;
+
+  background-color: #f1f5f9;
+
+  border-bottom: 1px solid var(--border-color);
+
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.04);
+}
+
+
+/* =========================
+   INFORMATIONS
+========================= */
+
+.product-details {
+  padding: 18px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  flex-grow: 1;
+
+  gap: 8px;
+}
+
+
+/* Catégorie */
+
+.product-category {
+  font-size: 12px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  color: var(--text-light);
+
+  font-weight: 600;
+
+  margin: 0;
+}
+
+
+/* Nom */
+
+.product-name {
+  font-size: 18px;
+
+  font-weight: 600;
+
+  color: var(--text-dark);
+
+  margin: 0;
+
+  line-height: 1.4;
+
+  display: -webkit-box;
+
+  -webkit-line-clamp: 2;
+
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+
+/* Prix */
+
+.product-price {
+  font-size: 20px;
+
+  font-weight: 700;
+
+  color: var(--primary-color);
+
+  margin-top: auto;
+
+  padding-top: 10px;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.status-message {
+  grid-column: 1 / -1;
+
+  text-align: center;
+
+  font-size: 18px;
+
+  color: var(--text-light);
+
+  padding: 50px;
+
+  background: var(--bg-card);
+
+  border-radius: var(--radius-lg);
+
+  border: 1px dashed var(--border-color);
+}
+
+
+/* =========================
+   TABLETTE
+========================= */
+
+@media (max-width: 1100px) {
+
+  .products-container {
+    grid-template-columns:
+      repeat(3, minmax(200px, 1fr));
+
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+}
+
+
+/* =========================
+   PETITE TABLETTE
+========================= */
+
+@media (max-width: 800px) {
+
+  .products-container {
+    grid-template-columns:
+      repeat(2, minmax(180px, 1fr));
+
+    gap: 18px;
+  }
+
+  .product-image {
+    height: 220px;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 550px) {
+
+  .products-container {
+    grid-template-columns: 1fr;
+
+    padding: 100px 15px 30px;
+
+    gap: 20px;
+  }
+
+  .products-title {
+    font-size: 26px;
+  }
+
+  .product-image {
+    height: 250px;
+  }
+
+}
